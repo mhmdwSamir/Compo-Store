@@ -2,7 +2,7 @@
 // Db && Config
 require("./src/db/db");
 require('dotenv').config({ path: "config.env" });
-
+  
 
 const express = require("express");
 const app = express();
@@ -13,16 +13,10 @@ const globalErrorHandler = require("./src/helpers/globalError.handler")
 //Body Parser middleware && config
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
-
-
-
 console.log("------♥♥♥♥♥♥--------");
 
 //  globalErrorHandler   ||  handle unhandled routes  
 app.use("*", globalErrorHandler);
-
-
 app.listen(() => {
     console.log(` app listening at http://localhost:`+ process.env.port)
 })
